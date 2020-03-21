@@ -21,7 +21,7 @@ display.onchange = (evt) => {
   state.applyState();
 }
 
-clock.ontick = (evt) => {  
+clock.ontick = (evt) => {
   time.drawTime(evt.date);
   date.drawDate(evt.date);
   activity.drawAllProgress();

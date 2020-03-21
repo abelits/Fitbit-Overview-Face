@@ -1,8 +1,8 @@
 {
   "fitbit": {
-    "appUUID": "7c4f7506-8ed8-4eb9-84e3-28b85671f26b",
+    "appUUID": "c4537633-7cca-44cd-b2e1-148b68f33551",
     "appType": "clockface",
-    "appDisplayName": "Overview",
+    "appDisplayName": "Overview-AB",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
@@ -18,42 +18,43 @@
     ],
     "i18n": {
       "en": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "de": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "es": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "fr": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "it": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "ja": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "ko": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "nl": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "sv": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "zh-cn": {
-        "name": "Overview"
+        "name": "Overview-AB"
       },
       "zh-tw": {
-        "name": "Overview"
+        "name": "Overview-AB"
       }
     },
     "defaultLanguage": "en-US"
   },
   "devDependencies": {
-    "@fitbit/sdk": "~4.0.0"
+    "@fitbit/sdk": "~4.0.0",
+    "@fitbit/sdk-cli": "^1.7.0"
   }
 }

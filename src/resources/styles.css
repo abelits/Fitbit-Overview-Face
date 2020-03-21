@@ -38,10 +38,10 @@
   font-family: Seville-Bold;
   text-length: 60;
   text-anchor: end;
-  fill: white; 
+  fill: white;
   x: 100%-60;
   y: 160;
-  display: none; 
+  display: none;
 }
 
 #348-am-pm {
@@ -93,10 +93,10 @@
   font-family: Seville-Bold;
   text-length: 60;
   text-anchor: end;
-  fill: white; 
+  fill: white;
   x: 100%-5;
   y: 175;
-  display: none; 
+  display: none;
 }
 
 #300-am-pm {
@@ -105,7 +105,7 @@
   text-length: 120;
   text-anchor: middle;
   x: 100%-140;
-  y: 220;
+  y:220;
   fill: white;
   display: none;
 }
@@ -116,14 +116,14 @@
   text-length: 120;
   text-anchor: end;
   x: 100%-5;
-  y:220;
+  y: 220;
   fill: white;
   display: none;
 }
 
 #hr {
   x: 3%;
-  y: 30;    
+  y: 30;
 }
 
 #hr-count {
@@ -183,7 +183,7 @@
   font-family: Seville-Bold-Condensed;
   fill: white;
   x: 22;
-  y: 18;  
+  y: 18;
 }
 
 #calendar {
@@ -269,6 +269,6 @@
   font-size: 22;
   x: 26;
   y: 15;
-  text-length: 10; 
+  text-length: 10;
   font-family: Seville-Bold-Condensed;
 }
