@@ -90,16 +90,22 @@ export function applySettings() {
     }
 
     if (settings.hasOwnProperty("timeColour") && settings["timeColour"]) {
-      time.timeHourEl.style.fill = settings["timeColour"];
+      time.timeHourEl10.style.fill = settings["timeColour"];
+      time.timeHourEl1.style.fill = settings["timeColour"];
       time.timeColonEl.style.fill = settings["timeColour"];
-      time.timeMinuteEl.style.fill = settings["timeColour"];
-      time.timeSecEl.style.fill = settings["timeColour"];
+      time.timeMinuteEl10.style.fill = settings["timeColour"];
+      time.timeMinuteEl1.style.fill = settings["timeColour"];
+      time.timeSecEl10.style.fill = settings["timeColour"];
+      time.timeSecEl1.style.fill = settings["timeColour"];
       time.timeAmPmEl.style.fill = settings["timeColour"];
     } else {
-      time.timeHourEl.style.fill = "white";
+      time.timeHourEl10.style.fill = "white";
+      time.timeHourEl1.style.fill = "white";
       time.timeColonEl.style.fill = "white";
-      time.timeMinuteEl.style.fill = "white";
-      time.timeSecEl.style.fill = "white";
+      time.timeMinuteEl10.style.fill = "white";
+      time.timeMinuteEl1.style.fill = "white";
+      time.timeSecEl10.style.fill = "white";
+      time.timeSecEl1.style.fill = "white";
       time.timeAmPmEl.style.fill = "white";
     }
 

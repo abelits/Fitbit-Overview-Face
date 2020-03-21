@@ -28,16 +28,42 @@
   </svg>
 
   <svg id="clock">
-    <text id="348-time-hour"/>
+    <text id="348-time-hour10"/>
+    <text id="348-time-hour1"/>
     <text id="348-time-colon"/>
-    <text id="348-time-minute"/>
+    <text id="348-time-minute10"/>
+    <text id="348-time-minute1"/>
     <text id="348-am-pm"/>
-    <text id="348-second"/>
-    <text id="300-time-hour"/>
+    <text id="348-second10"/>
+    <text id="348-second1"/>
+    <text id="300-time-hour10"/>
+    <text id="300-time-hour1"/>
     <text id="300-time-colon"/>
-    <text id="300-time-minute"/>
+    <text id="300-time-minute10"/>
+    <text id="300-time-minute1"/>
     <text id="300-am-pm"/>
-    <text id="300-second"/>
+    <text id="300-second10"/>
+    <text id="300-second1"/>
+    <image id="300-tz1-icon" class="icon-city" href="icons8-kremlin-36.png" fill="red" />
+    <text id="300-tz1-hour10" />
+    <text id="300-tz1-hour1" />
+    <text id="300-tz1-colon" />
+    <text id="300-tz1-minute10" />
+    <text id="300-tz1-minute1" />
+    <image id="300-tz21-icon" class="icon-city" href="icons8-bridge-36.png" fill="red" />
+    <image id="300-tz2-icon" class="icon-city" href="icons8-bridge-36.png" fill="red" />
+    <text id="300-tz2-hour10" />
+    <text id="300-tz2-hour1" />
+    <text id="300-tz2-colon" />
+    <text id="300-tz2-minute10" />
+    <text id="300-tz2-minute1" />
+    
+    <image id="300-tz2a-icon" class="icon-city" href="icons8-bridge-36.png" fill="red" />
+    <text id="300-tz2a-hour10" />
+    <text id="300-tz2a-hour1" />
+    <text id="300-tz2a-colon" />
+    <text id="300-tz2a-minute10" />
+    <text id="300-tz2a-minute1" />
   </svg>
 
   <svg id="bm">

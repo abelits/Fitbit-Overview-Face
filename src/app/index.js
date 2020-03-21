@@ -5,6 +5,7 @@ import { battery as powerBattery } from "power";
 import { charger as powerCharger } from "power";
 import clock from "clock";
 
+import * as monospace from "./monospace.js";
 import * as bm from "./bm.js";
 import * as date from "./date.js"
 import * as battery from "./battery.js"
@@ -23,6 +24,7 @@ display.onchange = (evt) => {
 
 clock.ontick = (evt) => {
   time.drawTime(evt.date);
+  time.drawTimezones(evt.date);
   date.drawDate(evt.date);
   activity.drawAllProgress();
 }

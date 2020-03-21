@@ -11,9 +11,20 @@
   fill:black;
 }
 
-#348-time-hour {
+#348-time-hour10 {
   font-size: 100;
-  font-family: Seville-Bold;
+  font-family: Colfax-Regular;
+  text-length: 60;
+  text-anchor: end;
+  fill: white;
+  x: 100%-265;
+  y: 160;
+  display: none;
+}
+
+#348-time-hour1 {
+  font-size: 100;
+  font-family: Colfax-Regular;
   text-length: 60;
   text-anchor: end;
   fill: white;
@@ -33,9 +44,20 @@
   display: none;
 }
 
-#348-time-minute {
+#348-time-minute10 {
   font-size: 100;
-  font-family: Seville-Bold;
+  font-family: Colfax-Bold;
+  text-length: 60;
+  text-anchor: end;
+  fill: white;
+  x: 100%-120;
+  y: 160;
+  display: none;
+}
+
+#348-time-minute1 {
+  font-size: 100;
+  font-family: Colfax-Bold;
   text-length: 60;
   text-anchor: end;
   fill: white;
@@ -46,7 +68,7 @@
 
 #348-am-pm {
   font-size: 38;
-  font-family: Seville-Bold;
+  font-family: Colfax-Regular;
   text-length: 120;
   text-anchor: end;
   x: 100%-5;
@@ -55,9 +77,20 @@
   display: none;
 }
 
-#348-second {
+#348-second10 {
   font-size: 38;
-  font-family: Seville-Bold;
+  font-family: Colfax-Regular;
+  text-length: 120;
+  text-anchor: end;
+  x: 100%-28;
+  y:160;
+  fill: white;
+  display: none;
+}
+
+#348-second1 {
+  font-size: 38;
+  font-family: Colfax-Regular;
   text-length: 120;
   text-anchor: end;
   x: 100%-5;
@@ -66,13 +99,24 @@
   display: none;
 }
 
-#300-time-hour {
+#300-time-hour10 {
   font-size: 100;
-  font-family: Seville-Bold;
+  font-family: Colfax-Regular;
   text-length: 60;
   text-anchor: end;
   fill: white;
-  x: 100%-150;
+  x: 100%-225;
+  y: 175;
+  display: none;
+}
+
+#300-time-hour1 {
+  font-size: 100;
+  font-family: Colfax-Regular;
+  text-length: 60;
+  text-anchor: end;
+  fill: white;
+  x: 100%-165;
   y: 175;
   display: none;
 }
@@ -83,39 +127,258 @@
   text-length: 60;
   text-anchor: end;
   fill: white;
-  x: 100%-125;
+  x: 100%-140;
   y: 168;
   display: none;
 }
 
-#300-time-minute {
+#300-time-minute10 {
   font-size: 100;
-  font-family: Seville-Bold;
+  font-family: Colfax-Bold;
   text-length: 60;
   text-anchor: end;
   fill: white;
-  x: 100%-5;
+  x: 100%-80;
+  y: 175;
+  display: none;
+}
+
+#300-time-minute1 {
+  font-size: 100;
+  font-family: Colfax-Bold;
+  text-length: 60;
+  text-anchor: end;
+  fill: white;
+  x: 100%-20;
   y: 175;
   display: none;
 }
 
 #300-am-pm {
   font-size: 40;
-  font-family: Seville-Bold;
+  font-family: Colfax-Regular;
   text-length: 120;
   text-anchor: middle;
-  x: 100%-140;
+  x: 100%-155;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-second10 {
+  font-size: 40;
+  font-family: Colfax-Regular;
+  text-length: 120;
+  text-anchor: end;
+  x: 100%-44;
   y:220;
   fill: white;
   display: none;
 }
 
-#300-second {
+#300-second1 {
   font-size: 40;
-  font-family: Seville-Bold;
+  font-family: Colfax-Regular;
   text-length: 120;
   text-anchor: end;
-  x: 100%-5;
+  x: 100%-20;
+  y:220;
+  fill: white;
+  display: none;
+}
+
+#300-tz1-icon {
+  width: 36;
+  height: 36;
+  x: 3%;
+  y: 190;
+  display: none;
+}
+
+#300-tz21-icon {
+  width: 36;
+  height: 36;
+  x: 3%;
+  y: 190;
+  display: none;
+}
+
+#300-tz1-hour10 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 3%+54;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz1-hour1 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 3%+72;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz1-colon {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 3%+82;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz1-minute10 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 3%+100;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz1-minute1 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 3%+118;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz2-icon {
+  width: 36;
+  height: 36;
+  x: 97%-118;
+  y: 60;
+  display: none;
+}
+
+#300-tz2-hour10 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-64;
+  y: 90;
+  fill: white;
+  display: none;
+}
+
+#300-tz2-hour1 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-46;
+  y: 90;
+  fill: white;
+  display: none;
+}
+
+#300-tz2-colon {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-36;
+  y: 90;
+  fill: white;
+  display: none;
+}
+
+#300-tz2-minute10 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-18;
+  y: 90;
+  fill: white;
+  display: none;
+}
+
+#300-tz2-minute1 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%;
+  y: 90;
+  fill: white;
+  display: none;
+}
+
+#300-tz2a-icon {
+  width: 36;
+  height: 36;
+  x: 97%-118;
+  y: 190;
+  display: none;
+}
+
+#300-tz2a-hour10 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-64;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz2a-hour1 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-46;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz2a-colon {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-36;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz2a-minute10 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%-18;
+  y: 220;
+  fill: white;
+  display: none;
+}
+
+#300-tz2a-minute1 {
+  font-size: 30;
+  font-family: Colfax-Regular;
+  text-length: 18;
+  text-anchor: end;
+  x: 97%;
   y: 220;
   fill: white;
   display: none;
