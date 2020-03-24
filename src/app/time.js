@@ -192,10 +192,131 @@ export function setHours(now) {
 }
 //Time Draw - END
 
+function isLeapYear(year)
+{
+    const leapdate1 = new Date(Date.UTC(year, 1, 28, 0, 0, 0, 0));
+    const leapdate2 = new Date(Date.UTC(year, 2, 1, 0, 0, 0, 0));
+    if ((leapdate2.getTime() - leapdate1.getTime()) > (25 * 3600 * 1000))
+		return 1;
+    else
+		return 0;
+}
+
+function DaysInMonth(month, addfeb)
+{
+    switch (month) {
+    case 1:
+	return 28 + addfeb;
+    case 3:
+    case 5:
+    case 8:
+    case 10:
+	return 30;
+    default:
+	return 31;
+    }
+}
+
+var nextswitchtime = 0;
+var nextswitchtime_set = 0;
+var tz1_offset = 0;
+var tz2_offset = 0;
+
+function getoffset_m(now, regoffset, dstoffset,
+		     regmonth, regweek, regday,
+		     reghour, regminute, regsecond,
+		     dstmonth, dstweek, dstday,
+		     dsthour, dstminute, dstsecond) {
+
+    const curr_reg = new Date(now + regoffset * 1000);
+    const curr_dst = new Date(now + dstoffset * 1000);
+
+    var year, leap, dow, first_matching_dow, day, days;
+
+    var firstdaymon_dst, firstdaymon_reg,
+	dstswitchtime, regswitchtime,
+	dstswitchtime_utc, regswitchtime_utc;
+
+    year = curr_reg.getUTCFullYear() + 1;
+
+    do {
+	leap = isLeapYear(year);
+	days = DaysInMonth(dstmonth - 1);
+
+	firstdaymon_dst = new Date(Date.UTC(year, dstmonth - 1, 1, 0, 0, 0, 0));
+
+	dow = firstdaymon_dst.getUTCDay();
+	first_matching_dow = 1 + (dstday - dow);
+	if (first_matching_dow < 1)
+	    first_matching_dow += 7;
+
+	day = first_matching_dow + (dstweek - 1) * 7;
+
+	while (day > days)
+	    day -= 7;
+
+	dstswitchtime = Date.UTC(year, dstmonth - 1, day, 0, 0, 0, 0)
+	    + (dsthour * 3600 + dstminute * 60 + dstsecond) * 1000;
+	dstswitchtime_utc = dstswitchtime - (regoffset * 1000);
+
+	if ((dstswitchtime_utc > now) &&
+	    ((nextswitchtime_set == 0)
+	     || (nextswitchtime > dstswitchtime_utc))) {
+	    nextswitchtime = dstswitchtime_utc;
+	    nextswitchtime_set = 1;
+	}
+	year --;
+    } while (dstswitchtime_utc > now);
+
+    year = curr_dst.getUTCFullYear() + 1;
+
+    do {
+	leap = isLeapYear(year);
+	days = DaysInMonth(regmonth - 1);
+
+	firstdaymon_reg = new Date(Date.UTC(year, regmonth - 1, 1, 0, 0, 0, 0));
+	dow = firstdaymon_reg.getUTCDay();
+	first_matching_dow = 1 + (regday - dow);
+	if (first_matching_dow < 1)
+	    first_matching_dow += 7;
+
+	day = first_matching_dow + (regweek - 1) * 7;
+
+	while (day > days)
+	    day -= 7;
+
+	regswitchtime = Date.UTC(year, regmonth - 1, day, 0, 0, 0, 0)
+	    + (reghour * 3600 + regminute * 60 + regsecond) * 1000;
+	regswitchtime_utc = regswitchtime - (dstoffset * 1000);
+
+	if ((regswitchtime_utc > now) &&
+	    ((nextswitchtime_set == 0)
+	     || (nextswitchtime > regswitchtime_utc))) {
+	    nextswitchtime = regswitchtime_utc;
+	    nextswitchtime_set = 1;
+	}
+	year --;
+    } while (regswitchtime_utc > now);
+
+    if (regswitchtime_utc >= dstswitchtime_utc)
+    	return regoffset;
+    else
+    	return dstoffset;
+}
+
 export function drawTimezones(now) {
   const ms = Date.now();
-  const tz1_now = new Date(ms + 10800000);
-  const tz2_now = new Date(ms - 25200000);
+  if (ms >= nextswitchtime || nextswitchtime_set == 0) {
+      tz1_offset = 3 * 3600 * 1000; /* MSK-3 */
+      tz2_offset = getoffset_m(ms,
+		     -8 * 3600 * 1000, -7 * 3600 * 1000,
+		     11, 1, 0,
+		     2, 0, 0,
+		     3, 2, 0,
+		     2, 0, 0); /* PST8PDT,M3.2.0/2:00:00,M11.1.0/2:00:00 */
+    }
+  const tz1_now = new Date(ms + tz1_offset);
+  const tz2_now = new Date(ms + tz2_offset);
   if (showSeconds) {
     tz2_timeColonEl = tz2b_timeColonEl;
     tz2_iconEl = tz2b_iconEl;
