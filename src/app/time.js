@@ -228,8 +228,8 @@ function getoffset_m(now, regoffset, dstoffset,
 		     dstmonth, dstweek, dstday,
 		     dsthour, dstminute, dstsecond) {
 
-    const curr_reg = new Date(now + regoffset * 1000);
-    const curr_dst = new Date(now + dstoffset * 1000);
+    const curr_reg = new Date(now + regoffset);
+    const curr_dst = new Date(now + dstoffset);
 
     var year, leap, dow, first_matching_dow, day, days;
 
@@ -257,7 +257,7 @@ function getoffset_m(now, regoffset, dstoffset,
 
 	dstswitchtime = Date.UTC(year, dstmonth - 1, day, 0, 0, 0, 0)
 	    + (dsthour * 3600 + dstminute * 60 + dstsecond) * 1000;
-	dstswitchtime_utc = dstswitchtime - (regoffset * 1000);
+	dstswitchtime_utc = dstswitchtime - regoffset;
 
 	if ((dstswitchtime_utc > now) &&
 	    ((nextswitchtime_set == 0)
@@ -275,6 +275,7 @@ function getoffset_m(now, regoffset, dstoffset,
 	days = DaysInMonth(regmonth - 1);
 
 	firstdaymon_reg = new Date(Date.UTC(year, regmonth - 1, 1, 0, 0, 0, 0));
+
 	dow = firstdaymon_reg.getUTCDay();
 	first_matching_dow = 1 + (regday - dow);
 	if (first_matching_dow < 1)
@@ -287,7 +288,7 @@ function getoffset_m(now, regoffset, dstoffset,
 
 	regswitchtime = Date.UTC(year, regmonth - 1, day, 0, 0, 0, 0)
 	    + (reghour * 3600 + regminute * 60 + regsecond) * 1000;
-	regswitchtime_utc = regswitchtime - (dstoffset * 1000);
+	regswitchtime_utc = regswitchtime - dstoffset;
 
 	if ((regswitchtime_utc > now) &&
 	    ((nextswitchtime_set == 0)
